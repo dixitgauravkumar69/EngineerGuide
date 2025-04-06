@@ -79,7 +79,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 Sorting Hat Technologies Pvt Ltd</p>
+        <p>© 2025 SIStec</p>
         <div className="socials">
           <span>📘</span>
           <span>📺</span>
