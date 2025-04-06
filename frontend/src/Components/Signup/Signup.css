@@ -4,7 +4,7 @@
     align-items: center;
     background-color: #f9fafb;
     padding: 20px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
   }
   
   .signup-container {

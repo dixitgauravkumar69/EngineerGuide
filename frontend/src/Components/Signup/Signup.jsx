@@ -49,7 +49,7 @@ const Signup = () => {
           password: "",
           branch: "",
           semester: "",
-          image: null,
+         
         });
         navigate("/");
       } else {
@@ -139,11 +139,7 @@ const Signup = () => {
               </select>
             </div>
 
-            <div className="form-group">
-              <label>Upload Profile Image</label>
-              <input type="file" name="image" accept="image/*" onChange={handleChange} required />
-            </div>
-
+            
             <button type="submit" className="signup-button">Sign Up</button>
           </form>
         </div>
