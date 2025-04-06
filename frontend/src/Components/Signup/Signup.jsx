@@ -94,18 +94,6 @@ const Signup = () => {
             </div>
 
             <div className="form-group">
-              <label>Mobile Number</label>
-              <input
-                type="tel"
-                name="mobile"
-                value={formData.mobile}
-                onChange={handleChange}
-                pattern="[0-9]{10}"
-                required
-              />
-            </div>
-
-            <div className="form-group">
               <label>Password</label>
               <input
                 type="password"
@@ -116,6 +104,19 @@ const Signup = () => {
               />
             </div>
 
+            <div className="form-group">
+              <label>Phone</label>
+              <input
+                type="tel"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                pattern="[0-9]{10}"
+                required
+              />
+            </div>
+
+            
             <div className="form-group">
               <label>Branch</label>
               <select name="branch" value={formData.branch} onChange={handleChange} required>
