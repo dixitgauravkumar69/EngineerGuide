@@ -1,0 +1,67 @@
+
+.navbar {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo styling */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between logo and text */
+  }
+  
+  
+  /* Group buttons */
+  .button-group {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+  }
+  .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e3a8a; /* Tailwind blue-900 */
+    margin: 0;
+  }
+  
+  
+  /* Login button */
+  .login-btn {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+    color: #374151; /* Tailwind's gray-700 */
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-btn:hover {
+    background-color: #f3f4f6; /* Tailwind's gray-100 */
+  }
+  
+  /* Sign Up button */
+  .signup-btn {
+    padding: 0.5rem 1rem;
+    background-color: #2563eb; /* Tailwind's blue-600 */
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .signup-btn:hover {
+    background-color: #1d4ed8; /* Tailwind's blue-700 */
+  }
+  
