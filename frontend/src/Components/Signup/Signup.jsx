@@ -6,50 +6,42 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    mobile: "",
     password: "",
+    mobile: "",
     branch: "",
     semester: "",
-    image: null,
   });
 
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "image") {
-      setFormData({ ...formData, image: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      data.append(key, value);
-    });
-
     try {
-      const response = await fetch("http://localhost:3000/api/signup", {
+      const response = await fetch("http://localhost:3000/user/signup", {
         method: "POST",
-        body: data,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
       if (response.ok) {
-        setMessage(`Welcome, ${formData.name}!`);
+       alert(`Welcome, ${formData.name}!`) ;
         setFormData({
           name: "",
           email: "",
-          mobile: "",
           password: "",
+          mobile: "",
           branch: "",
           semester: "",
-         
         });
         navigate("/");
       } else {
@@ -67,9 +59,6 @@ const Signup = () => {
           <div className="logo-container">
             <img src="/logo.png" alt="EngineeringGuide" className="logo-img" />
           </div>
-         
-          
-
           <form className="signup-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Name</label>
@@ -116,10 +105,14 @@ const Signup = () => {
               />
             </div>
 
-            
             <div className="form-group">
               <label>Branch</label>
-              <select name="branch" value={formData.branch} onChange={handleChange} required>
+              <select
+                name="branch"
+                value={formData.branch}
+                onChange={handleChange}
+                required
+              >
                 <option value="">Select Branch</option>
                 <option value="CSE">CSE</option>
                 <option value="IT">IT</option>
@@ -132,7 +125,12 @@ const Signup = () => {
 
             <div className="form-group">
               <label>Semester</label>
-              <select name="semester" value={formData.semester} onChange={handleChange} required>
+              <select
+                name="semester"
+                value={formData.semester}
+                onChange={handleChange}
+                required
+              >
                 <option value="">Select Semester</option>
                 {[...Array(8)].map((_, i) => (
                   <option key={i + 1} value={i + 1}>{`${i + 1}`}</option>
@@ -140,9 +138,11 @@ const Signup = () => {
               </select>
             </div>
 
-            
-            <button type="submit" className="signup-button">Sign Up</button>
+            <button type="submit" className="signup-button">
+              Sign Up
+            </button>
           </form>
+          {message && <p className="message">{message}</p>}
         </div>
 
         <div className="right-image">

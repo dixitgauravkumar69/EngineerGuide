@@ -10,14 +10,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/signin", {
+      const response = await fetch("http://localhost:3000/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password, remember }),
       });
       const data = await response.json();
       if (response.ok) {
-        alert("Login successful!");
+        alert(`Welcome back, ${data.user.name}!`);
       } else {
         alert("Invalid email or password. Please try again.");
       }
@@ -34,7 +34,7 @@ const Login = () => {
           <img src="/login.png" alt="Signin Visual" />
         </div>
         <div className="right-card">
-          <h2 className="signin-title">Sign In</h2>
+          <h2 className="signin-title">Log In</h2>
           <form onSubmit={handleSubmit} className="signin-form">
             <div className="form-group">
               <label>Email</label>

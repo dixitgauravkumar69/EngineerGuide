@@ -1,0 +1,68 @@
+.see-students {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 8px;
+    margin: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 8px 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-user-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .student-table th,
+  .student-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .student-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .delete-btn {
+    background-color: red;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  

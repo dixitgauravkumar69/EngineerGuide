@@ -1,0 +1,62 @@
+/* Adminlogin.css */
+.admin-login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f1f5f9;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .admin-login-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .admin-login-card h2 {
+    margin-bottom: 24px;
+    color: #1e293b;
+  }
+  
+  .admin-login-card input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.2s;
+  }
+  
+  .admin-login-card input:focus {
+    border-color: #3b82f6;
+    outline: none;
+  }
+  
+  .admin-login-card button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .admin-login-card button:hover {
+    background-color: #2563eb;
+  }
+  
+  .admin-login-card p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #dc2626;
+  }
+  
