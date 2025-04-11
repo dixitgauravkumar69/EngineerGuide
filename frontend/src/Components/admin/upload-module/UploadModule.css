@@ -1,0 +1,116 @@
+/* UploadModule.css */
+
+.upload-module {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .module-form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+  
+  .module-form h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .module-form input[type="text"],
+  .module-form input[type="file"],
+  .module-form input[readonly] {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .module-form input[readonly] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
+  .module-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .module-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .modules-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .modules-table th,
+  .modules-table td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .modules-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .modules-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .modules-table button {
+    background-color: #dc3545;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modules-table button:hover {
+    background-color: #a91d2e;
+  }
+  .upload-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* Left card/form */
+  .module-form {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  /* Right table */
+  .module-table-container {
+    flex: 2;
+    min-width: 400px;
+  }
+  
+  .module-table-container h3 {
+    margin-bottom: 1rem;
+  }
+  

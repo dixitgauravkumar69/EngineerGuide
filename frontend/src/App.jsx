@@ -3,12 +3,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navigation/Navbar";
 import Hero from "./Components/Hero/Hero";
 import Footer from "./Components/Footer/Footer";
-import Login from "./Components/login/Login"; // Create this file
-import Signup from "./Components/Signup/Signup"; // Create this file
-import AdminLogin from "./Components/admin/adminlogin"; // Create this file
-import AdminSignup from "./Components/admin/adminsignup"; // Create this file
-import AdminDashboard from "./Components/admin/admindashboard/adminDashboard"; // Create this file
-import Seestudents from "./Components/admin/seestudent/Seestudent"; // Create this file
+import Login from "./Components/login/Login"; 
+import Signup from "./Components/Signup/Signup"; 
+import AdminLogin from "./Components/admin/adminlogin"; 
+import AdminSignup from "./Components/admin/adminsignup";
+import AdminDashboard from "./Components/admin/admindashboard/adminDashboard"; 
+import Seestudents from "./Components/admin/seestudent/Seestudent"; 
+import UploadModule from "./Components/admin/upload-module/Uploadmodule";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Route path="/admin/signup" element={<AdminSignup />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/dashboard/see-students" element={<Seestudents />} />
-        {/* Add more routes as needed */}
+        <Route path="/admin/dashboard/upload-module" element={<UploadModule />} />
+        
       </Routes>
       <Footer />
     </BrowserRouter>
