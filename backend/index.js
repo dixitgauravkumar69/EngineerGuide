@@ -1,4 +1,5 @@
 const express = require('express');
+const path= require('path');
 const mongoose = require('mongoose');
 const signupRoute = require('./routes/signup');
 const loginRoute = require('./routes/login');
@@ -11,6 +12,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json()); // Very important
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost:27017/EngineeringGuide")

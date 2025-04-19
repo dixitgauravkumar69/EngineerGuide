@@ -12,17 +12,31 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post("/modules", upload.single("file"), async (req, res) => {
-  const { moduleName, branch, semester, dateTime } = req.body;
-  const newModule = new Module({
-    moduleName,
-    branch,
-    semester,
-    dateTime,
-    filePath: req.file.path,
-  });
-  await newModule.save();
-  res.send("Module uploaded");
+  try {
+    const { moduleName, branch, semester, dateTime } = req.body;
+
+    if (!req.file) {
+      return res.status(400).json({ message: "No file uploaded" });
+    }
+
+    const fileUrl = `http://localhost:3000/uploads/${req.file.filename}`;
+
+    const newModule = new Module({
+      moduleName,
+      branch,
+      semester,
+      dateTime,
+      fileUrl, // ✅ Save proper file URL
+    });
+
+    await newModule.save();
+    res.status(200).json({ message: "Module uploaded", module: newModule });
+  } catch (error) {
+    console.error("Error uploading module:", error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
+
 
 router.get("/modules", async (req, res) => {
   const modules = await Module.find();

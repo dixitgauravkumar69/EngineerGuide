@@ -6,7 +6,7 @@ const moduleSchema = new mongoose.Schema({
   branch: String,
   semester: String,
   dateTime: String,
-  filePath: String,
+  fileUrl: String,
 });
 
 module.exports = mongoose.model("Module", moduleSchema);

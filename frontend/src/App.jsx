@@ -11,6 +11,7 @@ import AdminDashboard from "./Components/admin/admindashboard/adminDashboard";
 import Seestudents from "./Components/admin/seestudent/Seestudent"; 
 import UploadModule from "./Components/admin/upload-module/Uploadmodule";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,7 +25,8 @@ function App() {
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/dashboard/see-students" element={<Seestudents />} />
         <Route path="/admin/dashboard/upload-module" element={<UploadModule />} />
-        
+       
+        {/* Add more routes as needed */}
       </Routes>
       <Footer />
     </BrowserRouter>
