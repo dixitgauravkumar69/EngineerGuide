@@ -6,6 +6,7 @@ const loginRoute = require('./routes/login');
 const adminRoute = require('./routes/adminroute');
 const ModuleRoute = require('./routes/moduleRoute');
 const GetusermoduleRoute = require('./routes/Getusermodule');
+const ModuleProgressRoute = require('./routes/Progress');
 const cors = require('cors');
 const app = express();
 
@@ -26,6 +27,7 @@ app.use('/user', loginRoute);
 app.use('/admin', adminRoute);
 app.use('/api', ModuleRoute);
 app.use('/api', GetusermoduleRoute);
+app.use('/api', ModuleProgressRoute);
 
 app.get("/",(req,res)=>
 {
