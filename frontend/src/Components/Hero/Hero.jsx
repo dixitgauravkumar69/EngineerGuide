@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import { useNavigate} from "react-router-dom";
 import "./Hero.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
+// pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js`;
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [modules, setModules] = useState([]);
   const [openPDF, setOpenPDF] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [progress, setProgress] = useState(0);
   const storedUser = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
@@ -29,74 +34,43 @@ const Hero = () => {
     }
   }, []);
 
-  const selectedModule = modules.find((mod) => mod._id === openPDF);
+  
 
+  
   return (
     <>
       <div className="hero-container">
         <div className="hero-left">
           <h1>Let's Start with us your engineering career</h1>
           <p>
-            Over <span className="highlight">10 thousand</span> students trust
-            us for their preparation
+            Over <span className="highlight">10 thousand</span> students trust us for their preparation
           </p>
         </div>
-
         <div className="hero-right">
           <img src="/home.png" alt="Hero Illustration" />
         </div>
       </div>
 
       {storedUser && (
-        <div className={`Modules ${openPDF ? "pdf-open" : ""}`}>
+        <div className="modules-section">
           <h1>Your Modules</h1>
 
-          <div className="module-pdf-layout">
-            <div className="module-cards-scroll">
+          <div className={`module-wrapper ${openPDF ? "pdf-open" : ""}`}>
+            <div className={`module-cards ${openPDF ? "cards-column" : "cards-row"}`}>
               {modules.map((module) => (
                 <div className="module-card" key={module._id}>
                   <h3>{module.moduleName}</h3>
                   <p>Branch: {module.branch}</p>
                   <p>Semester: {module.semester}</p>
 
-                  {module.fileUrl ? (
-                    <div className="pdf-preview">
-                      <Document
-                        file={module.fileUrl}
-                        // onLoadError={(error) =>
-                        //   // console.error("PDF load error:", error)
-                        // }
-                      >
-                        <Page pageNumber={1} width={350} />
-                      </Document>
-                    </div>
-                  ) : (
-                    <p style={{ color: "gray" }}>No PDF file specified.</p>
-                  )}
+                 
 
-                  <button
-                    className="view-button"
-                    onClick={() =>
-                      setOpenPDF(openPDF === module._id ? null : module._id)
-                    }
-                  >
-                    {openPDF === module._id ? "Hide PDF" : "View Full PDF"}
-                  </button>
+                  <button  onClick={() => navigate(`/viewModule/${module._id}`)}>View_Content</button>
                 </div>
               ))}
             </div>
 
-            {openPDF && selectedModule && selectedModule.fileUrl && (
-              <div className="pdf-viewer">
-                <iframe
-                  src={selectedModule.fileUrl}
-                  title="Full PDF"
-                  width="100%"
-                  height="1000px"
-                  style={{ border: "none" }}
-                ></iframe>
-              </div>
-            )}
+           
           </div>
         </div>
       )}

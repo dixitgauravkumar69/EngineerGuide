@@ -83,6 +83,7 @@
 .Modules {
   margin-top: 2rem;
   padding: 1rem 8%;
+  display: flex;
 }
 
 .Modules.pdf-open {
@@ -102,7 +103,7 @@
 /* Scrollable Cards Row */
 .module-cards-scroll {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   overflow-y: auto;
   max-height: 80vh;
@@ -160,9 +161,93 @@
 }
 
 iframe {
-  width: 80vw;       /* or use 100% if inside a fixed width parent */
-  height: 90vh;
+  width: 95vw;
+  margin-left: 10px; /* or use 100% if inside a fixed width parent */
+  height: 100vh;
   border: none;
   border-radius: 8px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+/* Whole layout container */
+.module-container {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* Card container */
+.module-list {
+  transition: all 0.3s ease;
+}
+
+/* Card Styling */
+.module-card {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.modules-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 8%;
+}
+
+/* PDF Panel on the right */
+.pdf-panel {
+  flex: 1;
+  height: 90vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Updated for row-wise cards with minimized card width */
+.module-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Reduced card width */
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.module-card {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 200px; /* Reduced width */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Optional: To handle row wrapping when on small screens */
+.module-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.module-card {
+  margin-bottom: 1rem;
+}
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #10b981; /* Emerald Green */
+  transition: width 0.3s ease;
+}
+

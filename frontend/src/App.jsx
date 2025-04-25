@@ -10,7 +10,7 @@ import AdminSignup from "./Components/admin/adminsignup";
 import AdminDashboard from "./Components/admin/admindashboard/adminDashboard"; 
 import Seestudents from "./Components/admin/seestudent/Seestudent"; 
 import UploadModule from "./Components/admin/upload-module/Uploadmodule";
-
+import ViewModule from "./Components/viewModules/viewModule";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/dashboard/see-students" element={<Seestudents />} />
         <Route path="/admin/dashboard/upload-module" element={<UploadModule />} />
-       
+       <Route path="/viewModule/:courseId" element={<ViewModule />} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer />
